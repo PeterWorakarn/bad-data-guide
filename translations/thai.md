@@ -1,10 +1,10 @@
 # The Quartz guide to bad data
 
-**An exhaustive reference to problems seen in real-world data along with suggestions on how to resolve them.**
+**แหล่งอ้างอิงสำหรับปัญหาที่คุณต้องเจอในการทำข้อมูลในโลกแห่งความเป็นจริง พร้อมแนวทางการแก้ปัญหา**
 
-As a reporter your world is full of data. And those data are full of problems. This guide presents thorough descriptions and suggested solutions to many of the kinds of problems that you will encounter when working with data.
+โลกนี้เต็มไปด้วยชุดข้อมูลที่น่าสนใจมากมาย แต่ชุดข้อมูลบางอันก็มีปัญหาไม่พร้อมที่ใช้งาน ตัวบทความนี้จึงตั้งใจที่จะนำเสนอปัญหาเหล่านั้น พร้อมทั้งแนวทางแก้ไข เพื่อให้คุณสามารถใช้ประโยชน์จากข้อมูลได้เต็มที่
 
-Most of these problems can be solved. Some of them can't be solved and that means you should not use the data. Others can't be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can't help you.
+โดยปัญหาส่วนใหญ่ที่เกิดขึ้นกับชุดข้อมูลสามารถแก้ไขได้ แต่บางอันก็ไม่ใช่ (ซึ่งคุณไม่ควรใช้ชุดข้อมูลนั้น) หรือบางชุดข้อมูลมีปัญหา แต่ก็ยังสามารถใช้ได้ แต่ต้องใช้ด้วยความระมัดระวัง Most of these problems can be solved. Some of them can't be solved and that means you should not use the data. Others can't be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can't help you.
 
 You cannot possibly review every dataset you encounter for all of these problems. If you try to do that you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
 
