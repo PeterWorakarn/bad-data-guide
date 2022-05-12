@@ -6,13 +6,14 @@
 
 โดยปัญหาส่วนใหญ่ที่เกิดขึ้นกับชุดข้อมูลสามารถแก้ไขได้ แต่บางอันก็ไม่ใช่ (ซึ่งคุณไม่ควรใช้ชุดข้อมูลนั้น) หรือบางชุดข้อมูลมีปัญหา แต่ก็ยังสามารถใช้ได้ แต่ต้องใช้ด้วยความระมัดระวัง เพื่อที่จะทำให้บทความนี้อ่านง่ายขึ้น บทความนี้จะถูกจัดกลุ่มตามคนที่สามารถแก้ปัญหาได้ดังนี้ ตัวคุณเอง, ที่มาของข้อมูล, ผู้เชี่ยวชาญ และอื่น ๆ โดยในแต่ละหัวข้อจะมีข้อแนะนำในกรณีคนเหล่านั้นไม่สามารถช่วยแก้ปัญหาให้เราได้
 
-ในบทความนี้ คุณไม่สามารถตรวจสอบทุก ๆ ปัญหาของคุณได้ แต่มันจะช่วยให้คุณ...You cannot possibly review every dataset you encounter for all of these problems. If you try to do that you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
+ในบทความนี้ คุณไม่สามารถตรวจสอบทุก ๆ ปัญหาของคุณได้ แต่มันจะช่วยให้คุณ...
+You cannot possibly review every dataset you encounter for all of these problems. If you try to do that you will never get anything published. However, by familiarizing yourself with the kinds of issues you are likely to encounter you will have a better chance of identifying an issue before it causes you to make a mistake.
 
-If you have questions about this guide please email [Chris](mailto:chrisgroskopf@gmail.com). Good luck!
+ถ้าคุณมีคำถามข้อสงสัยเกี่ยวกับบทความ โปรดติดต่อมาที่ email [Chris](mailto:chrisgroskopf@gmail.com).
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/). Send your pull requests!
 
-# Translations
+# คำแปลภาษาอื่น ๆ
 
 * [Chinese](https://web.archive.org/web/20170627153730/http://djchina.org/2016/07/12/bad_data_guide/) (complete)
 * [Chinese](http://cn.gijn.org/2016/01/10/quartz%E5%9D%8F%E6%95%B0%E6%8D%AE%E6%8C%87%E5%8D%97%E7%B2%BE%E9%80%89%EF%BC%9A%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/) (partial)
@@ -20,9 +21,9 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 In
 * [Portuguese](http://escoladedados.org/2016/09/08/guia-quartz-para-limpeza-de-dados/)
 * [Spanish](http://es.schoolofdata.org/guia-quartz/)
 
-Want to translate this guide into your language? Go ahead! Email [Chris](mailto:chrisgroskopf@gmail.com) to have your translation added here.
+ต้องการแปลบทความนี้ในภาษาของคุณ ให้ติดต่อมาที่ Email [Chris](mailto:chrisgroskopf@gmail.com)
 
-# Index
+# สารบัญ
 
 ## Issues that your source should solve
 
