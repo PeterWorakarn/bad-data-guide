@@ -48,27 +48,65 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 
 # สารบัญ
 
-## ปัญหาที่ควรติดต่อเจ้าของข้อมูลให้แก้ไข
+## ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข
 
-- [Values are missing](#values-are-missing)
-- [Zeros replace missing values](#zeros-replace-missing-values)
-- [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)
-- [Rows or values are duplicated](#rows-or-values-are-duplicated)
-- [Spelling is inconsistent](#spelling-is-inconsistent)
-- [Name order is inconsistent](#name-order-is-inconsistent)
-- [Date formats are inconsistent](#date-formats-are-inconsistent)
-- [Units are not specified](#units-are-not-specified)
-- [Categories are badly chosen](#categories-are-badly-chosen)
-- [Field names are ambiguous](#field-names-are-ambiguous)
-- [Provenance is not documented](#provenance-is-not-documented)
-- [Suspicious values are present](#suspicious-values-are-present)
-- [Data are too coarse](#data-are-too-coarse)
-- [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
-- [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
-- [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
-- [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
-- [Text has been converted to numbers](#text-has-been-converted-to-numbers)
-- [Numbers have been stored as text](#numbers-have-been-stored-as-text)
+- [The Quartz guide to bad data](#the-quartz-guide-to-bad-data)
+- [คำแปลภาษาอื่น ๆ](#คำแปลภาษาอื่น-ๆ)
+- [สารบัญ](#สารบัญ)
+  - [ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข)
+  - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง)
+  - [ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย)
+  - [ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย)
+- [รายละเอียดของแต่ละปัญหา](#รายละเอียดของแต่ละปัญหา)
+  - [ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข-1)
+    - [ข้อมูลขาดหายไป](#ข้อมูลขาดหายไป)
+    - [ใช้ 0 แทนค่าในส่วนข้อมูลที่ขาดหายไป](#ใช้-0-แทนค่าในส่วนข้อมูลที่ขาดหายไป)
+    - [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)
+    - [ข้อมูลมีค่าซ้ำกัน](#ข้อมูลมีค่าซ้ำกัน)
+    - [การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล](#การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล)
+    - [Name order is inconsistent](#name-order-is-inconsistent)
+    - [รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล](#รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล)
+    - [ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้](#ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้)
+    - [Categories are badly chosen](#categories-are-badly-chosen)
+    - [Field names are ambiguous](#field-names-are-ambiguous)
+    - [Provenance is not documented](#provenance-is-not-documented)
+    - [Suspicious values are present](#suspicious-values-are-present)
+    - [Data are too coarse](#data-are-too-coarse)
+    - [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
+    - [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
+    - [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
+    - [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
+    - [Text has been converted to numbers](#text-has-been-converted-to-numbers)
+    - [Numbers have been stored as text](#numbers-have-been-stored-as-text)
+  - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง-1)
+    - [Text is garbled](#text-is-garbled)
+    - [Line endings are garbled](#line-endings-are-garbled)
+    - [Data are in a PDF](#data-are-in-a-pdf)
+    - [Data are too granular](#data-are-too-granular)
+    - [Data were entered by humans](#data-were-entered-by-humans)
+    - [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
+    - [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)
+    - [Sample is not random](#sample-is-not-random)
+    - [Margin-of-error is too large](#margin-of-error-is-too-large)
+    - [Margin-of-error is unknown](#margin-of-error-is-unknown)
+    - [Sample is biased](#sample-is-biased)
+    - [Data have been manually edited](#data-have-been-manually-edited)
+    - [Inflation skews the data](#inflation-skews-the-data)
+    - [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
+    - [Timeframe has been manipulated](#timeframe-has-been-manipulated)
+    - [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
+  - [ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย-1)
+    - [Author is untrustworthy](#author-is-untrustworthy)
+    - [Collection process is opaque](#collection-process-is-opaque)
+    - [Data assert unrealistic precision](#data-assert-unrealistic-precision)
+    - [There are inexplicable outliers](#there-are-inexplicable-outliers)
+    - [An index masks underlying variation](#an-index-masks-underlying-variation)
+    - [Results have been p-hacked](#results-have-been-p-hacked)
+    - [Benford's Law fails](#benfords-law-fails)
+    - [Too good to be true](#too-good-to-be-true)
+  - [ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย-1)
+    - [ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่](#ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่)
+    - [ข้อมูลถูกจัดเก็บอยู่ใน scanned documents](#ข้อมูลถูกจัดเก็บอยู่ใน-scanned-documents)
 
 ## ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง
 
@@ -107,33 +145,38 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 
 # รายละเอียดของแต่ละปัญหา
 
-## ปัญหาที่ควรติดต่อเจ้าของข้อมูลให้แก้ไข
+## ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข
 
-### Values are missing
+### ข้อมูลขาดหายไป
 
-Beware blank or "null" values in any dataset
-unless you are certain you know what they mean. If
-the data are annual, was the value for that year
-never collected? If it is a survey, did a
-respondent refuse to answer the question?
+ระหว่างข้อมูลที่มีค่าว่าง หรือมีค่าเป็น "null"
+ในชุดข้อมูลของคุณให้ดี
+จนกว่าคุณจะมั่นใจว่ามันหมายถึงอะไร
+ถ้าข้อมูลนั้นเป็นรายงานประจำปี
+มันอาจจะหมายถึงว่าข้อมูลที่เป็นค่าว่างนั้นไม่ได้ถูกเก็บข้อมูลไว้หรือป่าว
+? หรือถ้าเป็นข้อมูลจากแบบสอบถามอาจแปลได้ว่า
+ผู้ตอบแบบสอบถามเลือกที่จะไม่ตอบคำถามนั้นหรือป่าว ?
 
-Any time you're working with data that has missing
-values you should ask yourself: "Do I know what
-the absence of this value means?" If the answer is
-no, you should ask your source.
+ทุก ๆ ครั้งที่คุณต้องทำงานกับข้อมูลที่ขาด ๆ หาย ๆ
+ไป คุณควรต้องถามตัวเองว่าคุณเข้าใจจริง ๆ มั้ย
+ว่าข้อมูลที่หายไปมันหมายถึงอะไร
+ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร
+คุณควรถามเจ้าของแหล่งข้อมูล
 
-### Zeros replace missing values
+### ใช้ 0 แทนค่าในส่วนข้อมูลที่ขาดหายไป
 
-Worse than a missing value is when an arbitrary
-value is used instead. This can be the result of a
-human not thinking through the implications or it
-can happen as the result of automated processes
-that simply don't know how to handle null values.
-In any case, if you see zeros in a series of
-numbers you should ask yourself if those values
-are really the number `0` or if they instead mean
-"nothing". (`-1` is also sometimes used this way.)
-If you aren't sure, ask your source.
+ที่แย่ยิ่งกว่าการที่ข้อมูลขาดหายไป
+คือการใส่ค่าตัวแทนลงไปแทนอย่างเช่น การใส่ค่า 0
+ลงไป
+ซึ่งนี่อาจจะเป็นผลลัพธ์ของการกระทำโดยไม่ตั้งใจ
+หรือเป็นการทำผ่านการเขียนโปรแกรมที่ไม่รู้วิธีจัดการกับค่าว่างที่เหมาะสม
+ไม่ว่าในกรณีใดก็ตาม หากคุณเจอเลข 0
+ในชุดข้อมูลของคุณ
+คุณควรถามตัวเองว่าข้อมูลตรงนั้นมีค่าเป็น 0
+หรือหมายถึงเป็นค่าว่าง ไม่มีค่า (มีบางกรณี
+เราจะเจอชุดข้อมูลที่เป็น -1 ได้เช่นกัน)
+ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร
+คุณควรถามเจ้าของแหล่งข้อมูล
 
 The same caution should be exercised for other
 non-numerical values where a `0` may be
@@ -171,7 +214,7 @@ something seems to be missing and double-check
 with your source. The universe of your data might
 be smaller than you think.
 
-### Rows or values are duplicated
+### ข้อมูลมีค่าซ้ำกัน
 
 If the same row appears in your dataset more than
 once you should find out why. Sometimes it need
@@ -183,7 +226,7 @@ with the data would be wrong. If something seems
 like it should be unique verify that it is. If you
 discover that it isn't, ask your source why.
 
-### Spelling is inconsistent
+### การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล
 
 Spelling is one of the most obvious ways of
 telling if data have been compiled by hand. Don't
@@ -232,7 +275,7 @@ something that is appropriate to publish.
 
 - [Data were entered by humans](#data-were-entered-by-humans)
 
-### Date formats are inconsistent
+### รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล
 
 Which date is in September:
 
@@ -250,7 +293,7 @@ same continent.
 - [Data were entered by humans](#data-were-entered-by-humans)
 - [Provenance is not documented](#provenance-is-not-documented)
 
-### Units are not specified
+### ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้
 
 Neither `weight` nor `cost` conveys any
 information about the unit of measurement. Don't
@@ -1054,7 +1097,7 @@ so ask an expert to check it out.
 
 ## ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย
 
-### Data are aggregated to the wrong categories or geographies
+### ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่
 
 Sometimes your data are at about the right level
 of detail (neither
@@ -1080,7 +1123,7 @@ See also:
 - [Data are too granular](#data-are-too-granular)
 - [Margin-of-error is too large](#margin-of-error-is-too-large)
 
-### Data are in scanned documents
+### ข้อมูลถูกจัดเก็บอยู่ใน scanned documents
 
 Thanks to FOIA laws it is frequently the case that
 governments are required to give you data—even
