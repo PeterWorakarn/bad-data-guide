@@ -48,19 +48,16 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 
 # สารบัญ
 
-## ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข
-
 - [The Quartz guide to bad data](#the-quartz-guide-to-bad-data)
 - [คำแปลภาษาอื่น ๆ](#คำแปลภาษาอื่น-ๆ)
 - [สารบัญ](#สารบัญ)
-  - [ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข)
-  - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง)
-  - [ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย)
-  - [ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย)
+  - [หมวดหมู่ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#หมวดหมู่ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข)
+  - [หมวดหมู่ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#หมวดหมู่ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย)
+  - [หมวดหมู่ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#หมวดหมู่ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย)
 - [รายละเอียดของแต่ละปัญหา](#รายละเอียดของแต่ละปัญหา)
-  - [ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข-1)
+  - [ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข)
     - [ข้อมูลขาดหายไป](#ข้อมูลขาดหายไป)
-    - [ใช้ 0 แทนค่าในส่วนข้อมูลที่ขาดหายไป](#ใช้-0-แทนค่าในส่วนข้อมูลที่ขาดหายไป)
+    - [ใช้ 0 แทนค่าในส่วนของข้อมูลที่ขาดหายไป](#ใช้-0-แทนค่าในส่วนของข้อมูลที่ขาดหายไป)
     - [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)
     - [ข้อมูลมีค่าซ้ำกัน](#ข้อมูลมีค่าซ้ำกัน)
     - [การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล](#การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล)
@@ -78,12 +75,12 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
     - [Text has been converted to numbers](#text-has-been-converted-to-numbers)
     - [Numbers have been stored as text](#numbers-have-been-stored-as-text)
-  - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง-1)
+  - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง)
     - [Text is garbled](#text-is-garbled)
     - [Line endings are garbled](#line-endings-are-garbled)
     - [Data are in a PDF](#data-are-in-a-pdf)
     - [Data are too granular](#data-are-too-granular)
-    - [Data were entered by humans](#data-were-entered-by-humans)
+    - [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
     - [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
     - [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)
     - [Sample is not random](#sample-is-not-random)
@@ -95,7 +92,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
     - [Timeframe has been manipulated](#timeframe-has-been-manipulated)
     - [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
-  - [ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย-1)
+  - [ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย)
     - [Author is untrustworthy](#author-is-untrustworthy)
     - [Collection process is opaque](#collection-process-is-opaque)
     - [Data assert unrealistic precision](#data-assert-unrealistic-precision)
@@ -104,11 +101,11 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [Results have been p-hacked](#results-have-been-p-hacked)
     - [Benford's Law fails](#benfords-law-fails)
     - [Too good to be true](#too-good-to-be-true)
-  - [ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย-1)
+  - [ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย)
     - [ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่](#ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่)
     - [ข้อมูลถูกจัดเก็บอยู่ใน scanned documents](#ข้อมูลถูกจัดเก็บอยู่ใน-scanned-documents)
 
-## ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง
+## หมวดหมู่ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข
 
 - [Text is garbled](#text-is-garbled)
 - [Line endings are garbled](#line-endings-are-garbled)
@@ -127,7 +124,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 - [Timeframe has been manipulated](#timeframe-has-been-manipulated)
 - [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
-## ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย
+## หมวดหมู่ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย
 
 - [Author is untrustworthy](#author-is-untrustworthy)
 - [Collection process is opaque](#collection-process-is-opaque)
@@ -138,7 +135,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 - [Benford's Law fails](#benfords-law-fails)
 - [Too good to be true](#too-good-to-be-true)
 
-## ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย
+## หมวดหมู่ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย
 
 - [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)
 - [Data are in scanned documents](#data-are-in-scanned-documents)
@@ -163,7 +160,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร
 คุณควรถามเจ้าของแหล่งข้อมูล
 
-### ใช้ 0 แทนค่าในส่วนข้อมูลที่ขาดหายไป
+### ใช้ 0 แทนค่าในส่วนของข้อมูลที่ขาดหายไป
 
 ที่แย่ยิ่งกว่าการที่ข้อมูลขาดหายไป
 คือการใส่ค่าตัวแทนลงไปแทนอย่างเช่น การใส่ค่า 0
@@ -228,33 +225,31 @@ discover that it isn't, ask your source why.
 
 ### การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล
 
-Spelling is one of the most obvious ways of
-telling if data have been compiled by hand. Don't
-just look at people's names—those are often the
-hardest place to detect spelling errors. Instead
-look for places where city names or states aren't
-consistent. (`Los Angelos` is one very common
-mistake.) If you find those, you can be pretty
-sure the data were compiled or edited by hand and
-that is always a reason to be skeptical of it.
-Data that have been edited by hand are the most
-likely to have mistakes. This doesn't mean you
-shouldn't use them but you may need to manually
-correct those mistakes or otherwise account for
-them in your reporting.
+การสะกดคำผิด ๆ ถูก ๆ
+เป็นสัญญาณที่เห็นได้ชัดเลยว่าข้อมูลนั้นถูกกรอกโดยการใช้คนมานั่งกรอกทีละบรรทัด
+และอย่าสังเกตการสะกดผิด ๆ ถูก ๆ แค่ชื่อของคน
+(ซึ่งหลาย ๆ ครั้งมันก็ตรวจสอบยากมาก ๆ
+ว่าสะกดผิดรึป่าว)
+เพราะสิ่งที่เจอบ่อยที่สุดคือชื่อสถานที่เฉพาะ
+หรือชื่อถนน ชื่อเมืองต่าง ๆ (`Los Angelos`
+เป็นชื่อเฉพาะที่บางทีก็สะกดไม่เหมือนกัน)
+และถ้าหากคุณเจอสัญญาณเหล่านี้ที่บอกว่าข้อมูลเหล่านี้ถูกกรอกโดยการใช้คนมานั่งกรอกทีละบรรทัด
+ไม่ได้หมายความว่าคุณจะใช้ข้อมูลนั้นไม่ได้เลย
+แต่คุณต้องทำใจว่า
+คุณอาจจะต้องมานั่งไล่เช็คตรวจสอบอีกที
+เพื่อให้ข้อมูลของคุณมีความถูกต้อง
 
-[OpenRefine's](http://openrefine.org/) utility for
+[OpenRefine's](http://openrefine.org/)
+เป็นเครื่องมือสำหรับ
 [text clustering](https://github.com/OpenRefine/OpenRefine/wiki/Clustering)
-can help streamline the spelling correction
-process by suggesting close matches between
-inconsistent values within a column (for example,
-matching `Los Angelos` and `Los Angeles`). Be
-sure, however, to
+จะช่วยคุณทำความสะอาดข้อมูลผ่านการแนะนำคำที่ถูกต้องในบรรดาคำที่สะกดผิดด้วยกัน
+(อย่างเช่น, `Los Angelos` และ `Los Angeles`
+เป็นคำเดียวกัน เพียงแต่สะกดผิด). แต่อย่างไรก็ตาม
 [document the changes you make](https://github.com/OpenRefine/OpenRefine/wiki/Exporters)
-so as to ensure
+เพื่อที่จะมั่นใจใน
 [good data provenance](#provenance-is-not-documented).
 
-See also:
+รายละเอียดเพิ่มเติม:
 
 - [Data were entered by humans](#data-were-entered-by-humans)
 
@@ -277,18 +272,18 @@ something that is appropriate to publish.
 
 ### รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล
 
-Which date is in September:
+วันที่ไหนคือวันในเดือนเดือนกันยายน ?
 
 - `10/9/15`
 - `9/10/15`
 
-If the first one was written by a European and the
-second one by an American
-[then they both are](https://en.wikipedia.org/wiki/Date_format_by_country).
-Without knowing the history of the data you can't
-know for sure. Know where your data came from and
-be sure that it was all created by folks from the
-same continent.
+ถ้าข้อแรกถูกบันทึกโดยคนยุโรป
+ส่วนข้อที่สองถูกบันทึกโดยคนอเมริกัน
+[ข้อมูลสองชุดนี้จะเหมือนกัน](https://en.wikipedia.org/wiki/Date_format_by_country).
+การที่เราไม่รู้ที่มาที่ไปของการบันทึกข้อมูล
+เราจึงไม่สามารถแน่ใจได้เลยว่าเราแปลความได้ถูกต้อง
+ดังนั้นคุณอาจจะต้องลองกลับไปตรวจสอบที่มา
+หรือถามเจ้าของข้อมูลอีกทีเพื่อความแน่ใจ
 
 - [Data were entered by humans](#data-were-entered-by-humans)
 - [Provenance is not documented](#provenance-is-not-documented)
@@ -641,7 +636,7 @@ See also:
 - [Data are too coarse](#data-are-too-coarse)
 - [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies).
 
-### Data were entered by humans
+### ข้อมูลนั้นถูกบันทึกโดยคน
 
 Human data entry is such a common problem that
 symptoms of it are mentioned in at least 10 of the
