@@ -58,14 +58,14 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
   - [ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข](#ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข)
     - [ข้อมูลขาดหายไป](#ข้อมูลขาดหายไป)
     - [ใช้ 0 แทนค่าในส่วนของข้อมูลที่ขาดหายไป](#ใช้-0-แทนค่าในส่วนของข้อมูลที่ขาดหายไป)
-    - [Data are missing you know should be there](#data-are-missing-you-know-should-be-there)
+    - [ข้อมูลที่ควรจะมีขาดหายไป](#ข้อมูลที่ควรจะมีขาดหายไป)
     - [ข้อมูลมีค่าซ้ำกัน](#ข้อมูลมีค่าซ้ำกัน)
     - [การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล](#การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล)
     - [Name order is inconsistent](#name-order-is-inconsistent)
     - [รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล](#รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล)
     - [ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้](#ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้)
     - [Categories are badly chosen](#categories-are-badly-chosen)
-    - [Field names are ambiguous](#field-names-are-ambiguous)
+    - [หัวข้อของข้อมูล (field name) กำกวม](#หัวข้อของข้อมูล-field-name-กำกวม)
     - [Provenance is not documented](#provenance-is-not-documented)
     - [Suspicious values are present](#suspicious-values-are-present)
     - [Data are too coarse](#data-are-too-coarse)
@@ -78,7 +78,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
   - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง)
     - [Text is garbled](#text-is-garbled)
     - [Line endings are garbled](#line-endings-are-garbled)
-    - [Data are in a PDF](#data-are-in-a-pdf)
+    - [ข้อมูลอยู่ในไฟล์ PDF](#ข้อมูลอยู่ในไฟล์-pdf)
     - [Data are too granular](#data-are-too-granular)
     - [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
     - [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
@@ -103,15 +103,15 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [Too good to be true](#too-good-to-be-true)
   - [ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย](#ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย)
     - [ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่](#ข้อมูลถูกสรุปรวบยอดมาผิดหมวดหมู่)
-    - [ข้อมูลถูกจัดเก็บอยู่ใน scanned documents](#ข้อมูลถูกจัดเก็บอยู่ใน-scanned-documents)
+    - [ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน](#ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน)
 
 ## หมวดหมู่ปัญหาที่ควรติดต่อเจ้าของแหล่งข้อมูลให้แก้ไข
 
 - [Text is garbled](#text-is-garbled)
 - [Line endings are garbled](#line-endings-are-garbled)
-- [Data are in a PDF](#data-are-in-a-pdf)
+- [ข้อมูลอยู่ในไฟล์สกุล PDF](#ข้อมูลอยู่ในไฟล์-pdf)
 - [Data are too granular](#data-are-too-granular)
-- [Data were entered by humans](#data-were-entered-by-humans)
+- [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
 - [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
 - [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)
 - [Sample is not random](#sample-is-not-random)
@@ -138,7 +138,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 ## หมวดหมู่ปัญหาที่คุณควรให้โปรแกรมเมอร์ช่วย
 
 - [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)
-- [Data are in scanned documents](#data-are-in-scanned-documents)
+- [ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน](#ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน)
 
 # รายละเอียดของแต่ละปัญหา
 
@@ -147,61 +147,40 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 ### ข้อมูลขาดหายไป
 
 ระหว่างข้อมูลที่มีค่าว่าง หรือมีค่าเป็น "null"
-ในชุดข้อมูลของคุณให้ดี
-จนกว่าคุณจะมั่นใจว่ามันหมายถึงอะไร
-ถ้าข้อมูลนั้นเป็นรายงานประจำปี
-มันอาจจะหมายถึงว่าข้อมูลที่เป็นค่าว่างนั้นไม่ได้ถูกเก็บข้อมูลไว้หรือป่าว
-? หรือถ้าเป็นข้อมูลจากแบบสอบถามอาจแปลได้ว่า
-ผู้ตอบแบบสอบถามเลือกที่จะไม่ตอบคำถามนั้นหรือป่าว ?
+ในชุดข้อมูลของคุณให้ดีจนกว่าคุณจะมั่นใจว่ามันหมายถึงอะไร
+ถ้าข้อมูลนั้นเป็นรายงานประจำปีมันอาจจะหมายถึงว่าข้อมูลที่เป็นค่าว่างนั้นไม่ได้ถูกเก็บข้อมูลไว้หรือป่าว ? หรือถ้าเป็นข้อมูลจากแบบสอบถามอาจแปลได้ว่าผู้ตอบแบบสอบถามเลือกที่จะไม่ตอบคำถามนั้นหรือป่าว ?
 
 ทุก ๆ ครั้งที่คุณต้องทำงานกับข้อมูลที่ขาด ๆ หาย ๆ
-ไป คุณควรต้องถามตัวเองว่าคุณเข้าใจจริง ๆ มั้ย
-ว่าข้อมูลที่หายไปมันหมายถึงอะไร
-ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร
-คุณควรถามเจ้าของแหล่งข้อมูล
+ไป คุณควรต้องถามตัวเองว่าคุณเข้าใจจริง ๆ มั้ย ว่าข้อมูลที่หายไปมันหมายถึงอะไร ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร คุณควรถามเจ้าของแหล่งข้อมูล
 
 ### ใช้ 0 แทนค่าในส่วนของข้อมูลที่ขาดหายไป
 
-ที่แย่ยิ่งกว่าการที่ข้อมูลขาดหายไป
-คือการใส่ค่าตัวแทนลงไปแทนอย่างเช่น การใส่ค่า 0
-ลงไป
-ซึ่งนี่อาจจะเป็นผลลัพธ์ของการกระทำโดยไม่ตั้งใจ
-หรือเป็นการทำผ่านการเขียนโปรแกรมที่ไม่รู้วิธีจัดการกับค่าว่างที่เหมาะสม
-ไม่ว่าในกรณีใดก็ตาม หากคุณเจอเลข 0
-ในชุดข้อมูลของคุณ
-คุณควรถามตัวเองว่าข้อมูลตรงนั้นมีค่าเป็น 0
-หรือหมายถึงเป็นค่าว่าง ไม่มีค่า (มีบางกรณี
-เราจะเจอชุดข้อมูลที่เป็น -1 ได้เช่นกัน)
-ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร
-คุณควรถามเจ้าของแหล่งข้อมูล
+ที่แย่ยิ่งกว่าการที่ข้อมูลขาดหายไป คือการใส่ค่าตัวแทนลงไปแทนอย่างเช่น การใส่ค่า `0` ลงไป
+ซึ่งนี่อาจจะเป็นผลลัพธ์ของการกระทำโดยไม่ตั้งใจหรือเป็นการทำผ่านการเขียนโปรแกรมที่ไม่รู้วิธีจัดการกับค่าว่างที่เหมาะสม ไม่ว่าในกรณีใดก็ตาม หากคุณเจอเลข `0` ในชุดข้อมูลของคุณ คุณควรถามตัวเองว่าข้อมูลตรงนั้นมีค่าเป็น `0` หรือหมายถึงเป็นค่าว่าง ไม่มีค่า (มีบางกรณีเราจะเจอชุดข้อมูลที่เป็น `-1` ได้เช่นกัน) 
 
-The same caution should be exercised for other
-non-numerical values where a `0` may be
-represented in another way. For example a false
-`0` value for a date is often displayed as
-`1970-01-01T00:00:00Z` or `1969-12-31T23:59:59Z`
-which is the
-[Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number).
-A false `0` for a location might be represented as
-`0°00'00.0"N+0°00'00.0"E` or simply `0°N 0°E`
-which is a point in the Atlantic Ocean just south
-of Ghana often referred to as
-[Null Island](https://en.wikipedia.org/wiki/Null_Island).
+ถ้าคุณไม่ชัวร์หรือไม่แน่ใจว่ามันหมายถึงอะไร คุณควรถามเจ้าของแหล่งข้อมูล
 
-See also:
+ข้อควรระวังนี้สามารถนำไปใช้ได้กับข้อมูลแบบ non-numerical values ที่ `0` อาจหมายถึงสิ่งอื่น เช่น `0` ในข้อมูลวันที่ จะแสดงผลเป็น `1970-01-01T00:00:00Z` or `1969-12-31T23:59:59Z` ซึ่งเป็น [Unix epoch for timestamps](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
+
+หรือ
+
+`0` ในข้อมูลภูมิศาสตร์ จะแสดงผลเป็น `0°00'00.0"N+0°00'00.0"E` หรือ เขียนอย่างง่ายแบบนี้ `0°N 0°E` ซึ่งเป็นจุดเล็ก ๆ ในมหาสมุทร แอตแลนติก ที่อยู่ทางใต้ของกาน่า รู้จักกันในชื่อ [Null Island](https://en.wikipedia.org/wiki/Null_Island).
+
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Suspicious values are present](#suspicious-values-are-present)
 - [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
-### Data are missing you know should be there
+
+### ข้อมูลที่ควรจะมีขาดหายไป
 
 Sometimes data are missing and you can't tell from
 the dataset itself, but you can still know because
 you know what the data purports to be about. If
 you have a dataset covering the United States then
 you can check to ensure all 50 states are
-represented. (And don't forget about
-[the territories](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50
+represented. (และอย่าลืม
+[พื้นที่ชายแดน](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50
 isn't the right number if the dataset includes
 Puerto Rico.) If you're dealing with a dataset of
 baseball players make sure it has the number of
@@ -225,8 +204,7 @@ discover that it isn't, ask your source why.
 
 ### การสะกดศัพท์เฉพาะในข้อมูลไม่เหมือนกันทั้งชุดข้อมูล
 
-การสะกดคำผิด ๆ ถูก ๆ
-เป็นสัญญาณที่เห็นได้ชัดเลยว่าข้อมูลนั้นถูกกรอกโดยการใช้คนมานั่งกรอกทีละบรรทัด
+การสะกดคำผิด ๆ ถูก ๆ เป็นสัญญาณที่เห็นได้ชัดเลยว่าข้อมูลนั้นถูกกรอกโดยการใช้คนมานั่งกรอกทีละบรรทัด
 และอย่าสังเกตการสะกดผิด ๆ ถูก ๆ แค่ชื่อของคน
 (ซึ่งหลาย ๆ ครั้งมันก็ตรวจสอบยากมาก ๆ
 ว่าสะกดผิดรึป่าว)
@@ -251,7 +229,7 @@ discover that it isn't, ask your source why.
 
 รายละเอียดเพิ่มเติม:
 
-- [Data were entered by humans](#data-were-entered-by-humans)
+- [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
 
 ### Name order is inconsistent
 
@@ -268,7 +246,7 @@ review before assuming that joining the
 `first_name` and `last_name` columns will give you
 something that is appropriate to publish.
 
-- [Data were entered by humans](#data-were-entered-by-humans)
+- [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
 
 ### รูปแบบวันที่ไม่เหมือนกันทั้งชุดข้อมูล
 
@@ -285,7 +263,7 @@ something that is appropriate to publish.
 ดังนั้นคุณอาจจะต้องลองกลับไปตรวจสอบที่มา
 หรือถามเจ้าของข้อมูลอีกทีเพื่อความแน่ใจ
 
-- [Data were entered by humans](#data-were-entered-by-humans)
+- [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
 - [Provenance is not documented](#provenance-is-not-documented)
 
 ### ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้
@@ -306,7 +284,7 @@ not a
 [ton](https://en.wikipedia.org/wiki/Long_ton) nor
 a [tonne](https://en.wikipedia.org/wiki/Tonne).
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Field names are ambiguous](#field-names-are-ambiguous)
 - [Inflation skews the data](#inflation-skews-the-data)
@@ -337,7 +315,7 @@ exceptionally ware of this problem when working
 with topics where definitions tend to be
 arbitrary, such as `race` or `ethnicity`.
 
-### Field names are ambiguous
+### หัวข้อของข้อมูล (field name) กำกวม
 
 What is a `residence`? Is it where someone lives
 or where they pay taxes? Is it a city or a county?
@@ -374,7 +352,7 @@ a nurse. Every stage in that chain is an
 opportunity for error. Know where your data came
 from.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Units are not specified](#units-are-not-specified)
 
@@ -413,7 +391,7 @@ particular error made by either a human or a
 computer. If you see them, ensure they actually
 mean what you think they mean!
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
 - [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
@@ -447,7 +425,7 @@ all instances occurred in one month or one season.
 Maybe the data follows an exponential trend
 instead of a linear one.) It's wrong. Don't do it.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Data are too granular](#data-are-too-granular)
 - [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies)
@@ -592,25 +570,17 @@ a command-line tool or enlisting the help of a
 programmer. You can read more about this issue
 [here](https://nicercode.github.io/blog/2013-04-30-excel-and-line-endings/).
 
-### Data are in a PDF
+### ข้อมูลอยู่ในไฟล์ PDF
 
-A tremendous amount of data—especially government
-data—are only available in PDF format. If you have
-real, textual data inside the PDF then there are
-several good options for extracting them. (If
-you've got
-[scanned documents](#data-are-in-scanned-documents)
-that's a different problem.) One excellent, free
-tool is [Tabula](http://tabula.technology/).
-However, if you have Adobe Creative Cloud then you
-also have access to Acrobat Pro, which has an
-excellent feature for exporting tables in PDFs to
-Excel. Either solution should be able to extract
-most tabular data from a PDF.
+ข้อมูลส่วนใหญ่ โดยเฉพาะข้อมูลเปิดจากรัฐบาล ส่วนใหญ่จะถูกจัดเก็บอยู่ในไฟล์สกุล PDF ถ้าเกิดคุณต้องการข้อมูลจากไฟล์นั้นจริง ๆ คุณสามารถเลือกที่จะดึงข้อมูลออกมาได้ (ถ้าคุณได้
+[เอกสารที่ถูกสแกน](#ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน)
+ซึ่งเป็นอีกปัญหานึง) หนึ่งในเครื่องมือฟรีที่ดีตัวนึงคือ [Tabula](http://tabula.technology/)
 
-See also:
+แต่ถ้าคุณมี Adobe Creative Cloud และมี Acrobat Pro คุณจะสามารถใช้ฟีเจอร์ในการดึงข้อมูลออกมาจากไฟล์สกุล PDF เป็นไฟล์สกุล Excel ได้ ไม่ว่าแนวทางไหนก็ควรจะสามารถดึงข้อมูลออกมาจากไฟล์สกุล PDF ได้
 
-- [Data are in scanned documents](#data-are-in-scanned-documents)
+เนื้อหาที่เกี่ยวข้อง:
+
+- [ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน](#ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน)
 
 ### Data are too granular
 
@@ -631,7 +601,7 @@ unusual groups you should ask a programmer and
 they can craft a solution that's easier to verify
 and reuse.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Data are too coarse](#data-are-too-coarse)
 - [Data are aggregated to the wrong categories or geographies](#data-are-aggregated-to-the-wrong-categories-or-geographies).
@@ -705,7 +675,7 @@ but it's also an error that others can make and
 pass on to you, so watch out for it if data comes
 to you with aggregates already computed.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Values are missing](#values-are-missing)
 - [Zeros replace missing values](#zeros-replace-missing-values)
@@ -727,7 +697,7 @@ drawn from their sample will be incorrect. The
 only thing you can do to fix a non-random sample
 is avoid using that data.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Sample is biased](#sample-is-biased)
 
@@ -758,7 +728,7 @@ number is not accurate enough to use, but as a
 rule of thumb, you should be cautious about using
 any number with a MOE over 10%.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Margin-of-error is unknown](#margin-of-error-is-unknown)
 
@@ -776,7 +746,7 @@ from a survey you should ask for what the MOE is.
 If the source can't tell you, those data probably
 aren't worth using for any serious analysis.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Margin-of-error is too large](#margin-of-error-is-too-large)
 
@@ -795,14 +765,14 @@ population that could skew the results. It's
 almost impossible to do this perfectly so it is
 often done wrong.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Sample is not random](#sample-is-not-random)
 
 ### Data have been manually edited
 
 Manual editing is almost the same problem as
-[data being entered by humans](#data-were-entered-by-humans)
+[data being entered by humans](#ข้อมูลนั้นถูกบันทึกโดยคน)
 except that it happens after the fact. In fact,
 data are often manually edited in an attempt to
 fix data that were originally entered by humans.
@@ -829,10 +799,10 @@ try to get the _primary source_ or at least the
 earliest version you can and then do your own
 analysis from that.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Provenance is not documented](#provenance-is-not-documented)
-- [Data were entered by humans](#data-were-entered-by-humans)
+- [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
 
 ### Inflation skews the data
 
@@ -846,7 +816,7 @@ perform the adjustment. This
 [inflation adjuster](http://inflation-adjust.herokuapp.com/)
 is a good place to start.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Natural/seasonal variation skews the data](#nationalseasonal-variation-skews-the-data)
 
@@ -865,7 +835,7 @@ month to month you will probably want to get
 adjusted data from your source. (Adjusting them
 yourself is much harder than with inflation.)
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Inflation skews the data](#inflation-skews-the-data)
 
@@ -891,7 +861,7 @@ data you can have confidence that you aren't
 making a comparison which would be invalidated by
 having a single additional data point.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
 
@@ -920,7 +890,7 @@ you do, _don't use this technique yourself_ to
 make a point you think is important. That's
 inexcusable.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Timeframe has been manipulated](#timeframe-has-been-manipulated)
 
@@ -961,7 +931,7 @@ then you should always verify with another expert
 that the data could reasonably have been collected
 in the way that was described.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Provenance is not documented](#provenance-is-not-documented)
 - [Data assert unrealistic precision](#data-assert-unrealistic-precision)
@@ -1057,7 +1027,7 @@ and lots of garbage study results make it into
 major publications because journalists don't
 understand p-values.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Margin-of-error is too large](#margin-of-error-is-too-large)
 
@@ -1112,37 +1082,23 @@ that may be introduced in the process. If you've
 got data aggregated to the wrong groups, ask a
 programmer if it is possible to re-aggregate it.
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
 - [Data are too coarse](#data-are-too-coarse)
 - [Data are too granular](#data-are-too-granular)
 - [Margin-of-error is too large](#margin-of-error-is-too-large)
 
-### ข้อมูลถูกจัดเก็บอยู่ใน scanned documents
+### ข้อมูลถูกจัดเก็บอยู่ในเอกสารที่ถูกสแกน
 
-Thanks to FOIA laws it is frequently the case that
-governments are required to give you data—even
-though they really don't want to. A very common
-tactic in these cases is for them to give you
-scans or photographs of the pages. These may be
-actual image files or, more likely, they will be
-gathered up into a PDF.
+ต้องขอบคุณกฏหมาย FOIA (The Freedom of Information Act ของประเทศสหรัฐอเมริกา) ที่กำกับให้รัฐบาลต้องเปิดเผยข้อมูลแม้เขาจะไม่ค่อยอยากเปิดข้อมูลก็ตาม
+หลาย ๆ ครั้ง การไม่อยากเปิดเผยข้อมูลมาในรูปแบบของการเปิดเผยข้อมูลที่ยากต่อการเข้าถึงเช่น
+การเปิดข้อมูลในรูปแบบภาพถ่ายของเอกสาร หรือ เอกสารที่ถูกสแกน หรือเอกสารที่จัดเก็บอยู่ไฟล์สกุล PDF
 
-It is possible to extract text from images and
-turn it back into data. This is done through a
-process called optical-character recognition
-(OCR). Modern OCR can often be almost 100%
-accurate, but it very much depends on the nature
-of the document. Anytime you use OCR to extract
-data you will want to have a process for
-validating the results match the original.
+ถึงแม้ว่าเราจะสามารถดึงข้อความออกมาจากภาพ หรือไฟล์ PDF และแปลงกลับออกมาเป็นข้อมูลได้แล้วผ่านการใช้เทคโนโลยี optical-character recognition (OCR)
+เทคโนโลยี OCR สมัยใหม่สามารถทำงานได้ถูกต้อง 100% แต่ส่วนใหญ่จะขึ้นอยู่กับคุณภาพของเอกสารต้นฉบับ ทำให้ทุก ๆ ครั้งที่มีการใช้ OCR เราจำเป็นจะต้องตรวจเช็คความเรียบร้อยกับต้นฉบับทุกครั้งก่อนนำไปใช้งาน
 
-There are many websites you can upload a document
-to for OCR, but there are also free tools that a
-programmer may be able to tune for your specific
-documents. Ask them what the best strategy is for
-the particular documents you have.
+ในปัจจุบันมีหลายเว็บไซต์ ที่ให้บริการแปลงเอกสารเป็นข้อมูลผ่านการใช้เทคโนโนโลยี OCR (บางอันก็ฟรี) ควรปรึกษาโปรแกรมเมอร์เพิ่มเติม เพื่อเลือกใช้เครื่องมือให้เหมาะสม
 
-See also:
+เนื้อหาที่เกี่ยวข้อง:
 
-- [Data are in a PDF](#data-are-in-a-pdf)
+- [ข้อมูลอยู่ในไฟล์ PDF](#ข้อมูลอยู่ในไฟล์-pdf)
