@@ -67,7 +67,7 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [Categories are badly chosen](#categories-are-badly-chosen)
     - [หัวข้อของข้อมูล (field name) กำกวม](#หัวข้อของข้อมูล-field-name-กำกวม)
     - [Provenance is not documented](#provenance-is-not-documented)
-    - [Suspicious values are present](#suspicious-values-are-present)
+    - [ระมัดระวังชุดข้อมูลที่น่าสงสัยเหล่านี้เอาไว้](#ระมัดระวังชุดข้อมูลที่น่าสงสัยเหล่านี้เอาไว้)
     - [Data are too coarse](#data-are-too-coarse)
     - [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
     - [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
@@ -174,21 +174,10 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
 
 ### ข้อมูลที่ควรจะมีขาดหายไป
 
-Sometimes data are missing and you can't tell from
-the dataset itself, but you can still know because
-you know what the data purports to be about. If
-you have a dataset covering the United States then
-you can check to ensure all 50 states are
-represented. (และอย่าลืม
-[พื้นที่ชายแดน](https://en.wikipedia.org/wiki/Territories_of_the_United_States)—50
-isn't the right number if the dataset includes
-Puerto Rico.) If you're dealing with a dataset of
-baseball players make sure it has the number of
-teams you expect. Verify that a few players who
-you know are included. Trust your intuition if
-something seems to be missing and double-check
-with your source. The universe of your data might
-be smaller than you think.
+บางครั้งข้อมูลหายไปจากชุดข้อมูล และเราไม่สามารถตรวจเช็คได้จากตัวชุดข้อมูลอย่างเดียว แต่เรารู้จากความรู้ ความเข้าใจของเราเองว่าข้อมูลขาดหายไป เช่น ชุดข้อมูลเกี่ยวกับรัฐในสหรัฐอเมริกา ตรงนี้เราก็สามารถตรวจสอบได้ว่าชุดข้อมูลมีรัฐในสหรัฐอเมริกาครบหรือไม่ (และอย่าลืม
+[พื้นที่ชายแดน](https://en.wikipedia.org/wiki/Territories_of_the_United_States) 50 รัฐไม่ใช่เลขที่ถูกต้อง ถ้าชุดข้อมูลนั้นรวมรัฐ Puerto Rico.) 
+
+ถ้าคุณกำลังเล่นกับข้อมูลผู้เล่นเบสบอล จงตรวจสอบให้ดีว่ามีทีมครบทุกทีม โดยคุณอาจจะตรวจสอบแบบเร็ว ๆ  และใช้สัญชาตญาณเพื่อดูว่ามีอะไรขาดหายไปมั้ย
 
 ### ข้อมูลมีค่าซ้ำกัน
 
@@ -356,40 +345,36 @@ from.
 
 - [Units are not specified](#units-are-not-specified)
 
-### Suspicious values are present
+### ระมัดระวังชุดข้อมูลที่น่าสงสัยเหล่านี้เอาไว้
 
-If you see any of these values in your data, treat
-them with an abundance of caution:
+ถ้าคุณเห็นข้อมูลเหล่านี้ในชุดข้อมูล ให้จัดการข้อมูลนั้นด้วยความระมัดระวัง:
 
-Numbers:
+ข้อมูลที่เป็นตัวเลข:
 
 - [`65,535`](https://en.wikipedia.org/wiki/65535_%28number%29)
 - [`255`](https://en.wikipedia.org/wiki/255_%28number%29)
 - [`2,147,483,647`](https://en.wikipedia.org/wiki/2147483647_%28number%29)
 - [`4,294,967,295`](https://en.wikipedia.org/wiki/4294967295)
 - [`555-3485`](https://en.wikipedia.org/wiki/555_%28telephone_number%29)
-- `99999` (or any other long sequence of 9's)
-- `00000` (or any other sequence of 0's)
+- `99999` (หรือ อะไรที่มีเลข 9 ยาวมาก ๆ)
+- `00000` (หรือ อะไรที่มีเลข 0 ยาวมาก ๆ)
 
-Dates:
+ข้อมูลที่เป็นวัน เวลา:
 
 - [`1970-01-01T00:00:00Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
 - [`1969-12-31T23:59:59Z`](https://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number)
 - [`January 1st, 1900`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 - [`January 1st, 1904`](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
 
-Locations:
+ข้อมูลเชิงภูมิศาสตร์:
 
 - [`0°00'00.0"N+0°00'00.0"E`](https://en.wikipedia.org/wiki/Null_Island)
-  or simply
+  หรือ เขียนอย่างย่อว่า
   [`0°N 0°E`](https://en.wikipedia.org/wiki/Null_Island)
 - US zip code `12345` (Schenectady, New York)
 - US zip code `90210` (Beverly Hills, CA)
 
-Each of these numbers has an indication of a
-particular error made by either a human or a
-computer. If you see them, ensure they actually
-mean what you think they mean!
+ข้อมูลแต่ละอันที่กล่าวถึง อาจจะบ่งบอกได้ถึงข้อผิดพลาดที่เกิดโดยคน หรือโดยคอมพิวเตอร์ ถ้าคุณเจอข้อมูลในลักษณะให้ตรวจสอบให้แน่ใจอีกทีว่ามันหมายถึงสิ่งที่คุณคิดจริงหรือไม่ ?
 
 เนื้อหาที่เกี่ยวข้อง:
 
