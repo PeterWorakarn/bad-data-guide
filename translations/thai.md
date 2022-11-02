@@ -70,13 +70,13 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [ระมัดระวังชุดข้อมูลที่น่าสงสัยเหล่านี้เอาไว้](#ระมัดระวังชุดข้อมูลที่น่าสงสัยเหล่านี้เอาไว้)
     - [Data are too coarse](#data-are-too-coarse)
     - [Totals differ from published aggregates](#totals-differ-from-published-aggregates)
-    - [Spreadsheet has 65536 rows](#spreadsheet-has-65536-rows)
-    - [Spreadsheet has 255 columns](#spreadsheet-has-255-columns)
-    - [Spreadsheet has dates in 1900, 1904, 1969, or 1970](#spreadsheet-has-dates-in-1900-1904-1969-or-1970)
-    - [Text has been converted to numbers](#text-has-been-converted-to-numbers)
-    - [Numbers have been stored as text](#numbers-have-been-stored-as-text)
+    - [Spreadsheet มี 65536 แถว](#spreadsheet-มี-65536-แถว)
+    - [Spreadsheet มี 255 คอลั่ม](#spreadsheet-มี-255-คอลั่ม)
+    - [Spreadsheet บันทึกข้อมูลวันที่ในปี 1900, 1904, 1969 หรือ 1970](#spreadsheet-บันทึกข้อมูลวันที่ในปี-1900-1904-1969-หรือ-1970)
+    - [ข้อความถูกแปลงเป็นตัวเลข](#ข้อความถูกแปลงเป็นตัวเลข)
+    - [ตัวเลขถูกเก็บเป็นข้อความ](#ตัวเลขถูกเก็บเป็นข้อความ)
   - [ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง](#ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง)
-    - [Text is garbled](#text-is-garbled)
+    - [ข้อมูลเป็นภาษาต่างดาว](#ข้อมูลเป็นภาษาต่างดาว)
     - [Line endings are garbled](#line-endings-are-garbled)
     - [ข้อมูลอยู่ในไฟล์ PDF](#ข้อมูลอยู่ในไฟล์-pdf)
     - [Data are too granular](#data-are-too-granular)
@@ -257,21 +257,13 @@ something that is appropriate to publish.
 
 ### ข้อมูลบางอันไม่ได้ระบุหน่วยที่ชัดเจนเอาไว้
 
-Neither `weight` nor `cost` conveys any
-information about the unit of measurement. Don't
-be too quick to assume that data produced within
-the United States are in units of pounds and
-dollars. Scientific data are often metric. Foreign
-prices may be specified in their local currency.
-If the data do not spell out their units, go back
-to your source and find out. Even if it does spell
-out its units always be wary of meanings that may
-have shifted over time. A dollar in 2010 is not a
-dollar today. And a
-[ton](https://en.wikipedia.org/wiki/Short_ton) is
-not a
-[ton](https://en.wikipedia.org/wiki/Long_ton) nor
-a [tonne](https://en.wikipedia.org/wiki/Tonne).
+แม้ว่า `น้ำหนัก` หรือ `ราคา` จะสื่อความหมายว่าเป็น หน่วยของการวัด แต่ก็เพิ่งอย่างด่วยสรุปว่าข้อมูลนั้นถูกบันทึกในประเทศ สหรัฐอเมริกา ที่ใช้หน่วยน้ำหนักเป็น ปอนด์ และคิดราคาเป็น ดอลลาร์ 
+ข้อมูลทางวิทยาศาสตร์ส่วนใหญ่มีหน่วยวัดเสมอ และแต่ละประเทศจะมีหน่วยวัดเฉพาะของตัวเอง ถ้าเกิดในชุดข้อมูลไม่ได้ระบุหน่วยวัดที่ชัดเจน คุณควรจะกลับไปเช็คแหล่งที่มาของชุดข้อมูล
+
+แต่ถึงแม้ว่าชุดข้อมูลบอกหน่วยวัดชัดเจน แต่หน่วยวัดส่วนใหญ่แล้วจะเปลี่ยนแปลงตามกาลเวลาเช่น ค่าเงินดอลลาร์ในปี 2010 ไม่ได้มีมูลค่าเท่ากับค่าเงินดอลลาร์ในวันนี้ 
+
+และ [ton](https://en.wikipedia.org/wiki/Short_ton) ไม่เหมือนกับ
+[ton](https://en.wikipedia.org/wiki/Long_ton) หรือ [tonne](https://en.wikipedia.org/wiki/Tonne)
 
 เนื้อหาที่เกี่ยวข้อง:
 
@@ -306,15 +298,10 @@ arbitrary, such as `race` or `ethnicity`.
 
 ### หัวข้อของข้อมูล (field name) กำกวม
 
-What is a `residence`? Is it where someone lives
-or where they pay taxes? Is it a city or a county?
-Field names in data are never as specific as we
-would like, but particular concern should be
-applied to those that could obviously mean two or
-more things. Even if you correctly infer what the
-values are supposed to mean, that ambiguity could
-have easily caused the person collecting the data
-to enter the wrong value.
+`residence` หรือ `ที่อยู่อาศัย` หมายถึงอะไร ?
+หมายถึงที่ ๆ คน ๆ นึงอยู่จริง ๆ หรือที่อยู่ตามทะเบียน
+
+หัวข้อของข้อมูล (Field names) บางทีก็ไม่เจาะจงเหมือนที่เราคิด และส่วนใหญ่สามารถตีความได้มากกว่าหนึ่งอย่าง และถึงแม้ว่าคุณเข้าใจข้อมูลนั้น แต่ก็อาจเป็นไปได้ว่าคนกรอกข้อมูลนั้น จะสับสนและกรอกข้อมูลผิดแทน
 
 ### Provenance is not documented
 
@@ -438,27 +425,19 @@ sometimes you'll catch them in a lie. Either way,
 you should make sure the published numbers match
 the totals for the data you're given.
 
-### Spreadsheet has 65536 rows
+### Spreadsheet มี 65536 แถว
 
-The maximum number of rows an old-fashioned Excel
-spreadsheet was allowed to have was 65,536. If you
-receive a dataset with that number of rows you
-have almost certainly been given truncated data.
-Go back and ask for the rest. Newer versions of
-Excel allowed for 1,048,576 rows, so it's less
-likely you'll be working with data that hits the
-limit.
+ในโปรแกรม Excel รุ่นเก่าสามารถบันทึกข้อมูลได้มากสุด 65,536 แถว ถ้าคุณได้รับชุดข้อมูลที่มีข้อมูลเท่ากับ 65,536 แถว เป็นไปได้ได้ว่าชุดข้อมูลจะถูกตัดทิ้งออกให้สามารถบันทึกในโปรแกรม Excel ได้ ดังนั้นคุณควรสอบถามเจ้าของข้อมูลถึงชุดข้อมูลที่เหลือ
 
-### Spreadsheet has 255 columns
+สำหรับโปรแกรม Excel รุ่นใหม่สามารถบันทึกข้อมูลได้มากสุด 1,048,576 แถว ซึ่งมันเป็นไปได้น้อย ๆ มาก ที่คุณจะต้องทำงานกับชุดข้อมูลที่มีข้อมูลขนาดนั้น (ในชุดข้อมูลที่ใหญ่ขนาดนั้นจะถูกใช้ผ่านโปรแกรมอื่นแทน)
 
-Apple's Numbers app can only handle spreadsheets
-with 255 columns, and the app will truncate files
-that have more columns without warning the user.
-If you receive a dataset with exactly 255 columns,
-ask if the file was ever opened or converted with
-Numbers.
+### Spreadsheet มี 255 คอลั่ม
 
-### Spreadsheet has dates in 1900, 1904, 1969, or 1970
+[โปรแกรม Numbers ใน Apple](https://www.apple.com/numbers/) สามารถจัดการ spreadsheets ได้แค่ 255 คอลั่ม และเมื่อเกินกว่านั้น ตัวโปรแกรมจะทิ้งข้อมูลที่เกินกว่านั้นโดยไม่แจ้งเตือนผู้ใช้แต่อย่างเดียว
+
+ถ้าเกิดคุณได้รับชุดข้อมูลที่ข้อมูลแค่ 255 คอลั่ม ให้ลองตรวจสอบดูว่าไฟล์นั้นถูกเปิด หรือเซฟข้อมูลด้วยโปรแกรม Numbers หรือไม่ ?
+
+### Spreadsheet บันทึกข้อมูลวันที่ในปี 1900, 1904, 1969 หรือ 1970
 
 For reasons beyond obscure, Excel's default date
 from which it counts all other dates is
@@ -477,9 +456,13 @@ In other words this is what happens when a system
 tries to display an empty value or a `0` value as
 a date.
 
-### Text has been converted to numbers
+### ข้อความถูกแปลงเป็นตัวเลข
 
-Not all numerals are numbers. For instance, the US
+ไม่ใช่จำนวนนับทุกอันถูกเก็บเป็นตัวเลข อย่างเช่น สำนักงานสํารวจสํามะโนประชากรของประเทศสหรัฐอเมริกาใช้ "รหัส FIPS" ในการระบุสถานที่ในประเทศ และรหัสพวกคือตัวเลขยาว ๆ ซึ่งมันไม่ใช่จำนวนนับ
+`037` ในรหัส FIPS หมายถึง เมือง Los Angeles ซึ่งมันไม่เหมือนตัวเลข (จำนวนนับ) `37` 
+
+
+ Not all numerals are numbers. For instance, the US
 Census Bureau uses "FIPS codes" to identify every
 place in the United States. These codes are of
 various lengths and are numeric. However, they are
@@ -494,7 +477,7 @@ it to another file format or merge it with another
 dataset. Watch out for data where this has
 happened before it was given to you.
 
-### Numbers have been stored as text
+### ตัวเลขถูกเก็บเป็นข้อความ
 
 When working with spreadsheets, numbers may be
 stored as text with unwanted formatting. This
@@ -515,7 +498,7 @@ names or metadata.
 
 ## ปัญหาที่คุณควรแก้ด้วยตัวคุณเอง
 
-### Text is garbled
+### ข้อมูลเป็นภาษาต่างดาว
 
 All letters are represented by computers as
 numbers. Encoding problems are issues that arise
