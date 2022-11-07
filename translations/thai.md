@@ -83,17 +83,17 @@ Email [Chris](mailto:chrisgroskopf@gmail.com)
     - [ข้อมูลนั้นถูกบันทึกโดยคน](#ข้อมูลนั้นถูกบันทึกโดยคน)
     - [Data are intermingled with formatting and annotations](#data-are-intermingled-with-formatting-and-annotations)
     - [Aggregations were computed on missing values](#aggregations-were-computed-on-missing-values)
-    - [Sample is not random](#sample-is-not-random)
+    - [กลุ่มตัวอย่างไม่เป็นกลาง](#กลุ่มตัวอย่างไม่เป็นกลาง)
     - [Margin-of-error is too large](#margin-of-error-is-too-large)
     - [Margin-of-error is unknown](#margin-of-error-is-unknown)
-    - [Sample is biased](#sample-is-biased)
+    - [กลุ่มตัวอย่างที่ไม่เป็นกลาง](#กลุ่มตัวอย่างที่ไม่เป็นกลาง)
     - [Data have been manually edited](#data-have-been-manually-edited)
     - [Inflation skews the data](#inflation-skews-the-data)
     - [Natural/seasonal variation skews the data](#naturalseasonal-variation-skews-the-data)
     - [Timeframe has been manipulated](#timeframe-has-been-manipulated)
     - [Frame of reference has been manipulated](#frame-of-reference-has-been-manipulated)
   - [ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย](#ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย)
-    - [Author is untrustworthy](#author-is-untrustworthy)
+    - [แหล่งข้อมูลที่ไม่น่าไว้วางใจ](#แหล่งข้อมูลที่ไม่น่าไว้วางใจ)
     - [Collection process is opaque](#collection-process-is-opaque)
     - [Data assert unrealistic precision](#data-assert-unrealistic-precision)
     - [There are inexplicable outliers](#there-are-inexplicable-outliers)
@@ -459,23 +459,10 @@ a date.
 ### ข้อความถูกแปลงเป็นตัวเลข
 
 ไม่ใช่จำนวนนับทุกอันถูกเก็บเป็นตัวเลข อย่างเช่น สำนักงานสํารวจสํามะโนประชากรของประเทศสหรัฐอเมริกาใช้ "รหัส FIPS" ในการระบุสถานที่ในประเทศ และรหัสพวกคือตัวเลขยาว ๆ ซึ่งมันไม่ใช่จำนวนนับ
-`037` ในรหัส FIPS หมายถึง เมือง Los Angeles ซึ่งมันไม่เหมือนตัวเลข (จำนวนนับ) `37` 
+`037` ในรหัส FIPS หมายถึง เมือง Los Angeles ซึ่งมันไม่เหมือนตัวเลข (จำนวนนับ) `37`
+ส่วน `37` ในรหัส FIPS หมายถึง เมือง North Carolina
 
-
- Not all numerals are numbers. For instance, the US
-Census Bureau uses "FIPS codes" to identify every
-place in the United States. These codes are of
-various lengths and are numeric. However, they are
-_not_ numbers. `037` is the FIPS code for Los
-Angeles County. It is not the number `37`. The
-numerals `37` are, however, a valid FIPS code: for
-North Carolina. Excel and other spreadsheets will
-often make the mistake of assuming numerals are
-numbers and stripping the leading zeros. This can
-cause all kinds of problems if you try to convert
-it to another file format or merge it with another
-dataset. Watch out for data where this has
-happened before it was given to you.
+ปัญหาคือโปรแกรม Excel หรือ โปรแกรม spreadsheets ส่วนใหญ่มักจะแก้ไขข้อมูลส่วนนี้เองด้วยการลบ `0` ด้านหน้าออก (ถ้าข้อความนั้นถูกแปลงเป็นตัวเลข) ปัญหานี้ทำให้ข้อมูลผิดเพี้ยนจากการเปิด/ปิดผ่านโปรแกรม spreadsheets ต่าง ๆ
 
 ### ตัวเลขถูกเก็บเป็นข้อความ
 
@@ -576,23 +563,10 @@ and reuse.
 
 ### ข้อมูลนั้นถูกบันทึกโดยคน
 
-Human data entry is such a common problem that
-symptoms of it are mentioned in at least 10 of the
-other issues described here. There is no worse way
-to screw up data than to let a single human type
-it in, without validation. For example, I once
-acquired the complete dog licensing database for
-Cook County, Illinois. Instead of requiring the
-person registering their dog to choose a breed
-from a list, the creators of the system had simply
-given them a text field to type into. As a result
-this database contained at least 250 spellings of
-`Chihuahua`. Even with the best tools available,
-data this messy can't be saved. They are
-effectively meaningless. This is not that
-important with dog data, but you don't want it
-happening with wounded soldiers or stock tickers.
-Beware human-entered data.
+ข้อมูลที่ถูกกรอกโดยคนเป็นปัญหาที่ที่พูดถึงไม่ต่ำกว่า 10 ครั้งในเอกสารนี้
+และไม่มีวิธีไหนที่จะทำให้ข้อมูลผิดเพี้ยนได้มากกว่าการใช้คนกรอกข้อมูลเข้ามาในระบบโดยไม่ตรวจสอบ
+
+ยกตัวอย่างเช่น การให้คนบันทึกข้อมูลสายพันธุ์สุนัขของตัวเอง โดยทำเป็นช่องให้กรอกข้อมูลแทนที่จะเป็นรายการสายพันธุ์ให้เลือก ปรากฏคนส่วนใหญ่ (กว่า 250 ครั้ง) กรอกคำว่า `Chihuahua` ผิด
 
 ### Data are intermingled with formatting and annotations
 
@@ -648,22 +622,9 @@ to you with aggregates already computed.
 - [Values are missing](#values-are-missing)
 - [Zeros replace missing values](#zeros-replace-missing-values)
 
-### Sample is not random
+### กลุ่มตัวอย่างไม่เป็นกลาง
 
-A non-random sampling error occurs when a survey
-or other sampled dataset either intentionally or
-accidentally fails to cover the entire population.
-This can happen for a variety of reasons ranging
-from time-of-day to the respondent's native
-language and is a common source of error in
-sociological research. It can also happen for less
-obvious reasons, such as when a researcher thinks
-they have a complete dataset and chooses to work
-with only part of it. If the original dataset was
-incomplete for any reason then any conclusions
-drawn from their sample will be incorrect. The
-only thing you can do to fix a non-random sample
-is avoid using that data.
+กลุ่มตัวอย่างที่ไม่ได้ถูกสุ่มจริง ๆ ไม่ว่าจะเกิดโดยบังเอิญ หรือโดยตั้งใจ ซึ่งสาเหตุเป็นได้ตั้งแต่ เวลาในการเก็บรวบรวมข้อมูล หรือเป็นข้อผิดพลาดในการเลือกระเบียบวิจัย หรือแม้แต่ความผิดพลาดของนักวิจัยเอง ซึ่งวิธีที่ดีที่สุดคือการหลีกเลี่ยงการใช้ชุดข้อมูลนั้น
 
 เนื้อหาที่เกี่ยวข้อง:
 
@@ -718,20 +679,10 @@ aren't worth using for any serious analysis.
 
 - [Margin-of-error is too large](#margin-of-error-is-too-large)
 
-### Sample is biased
+### กลุ่มตัวอย่างที่ไม่เป็นกลาง
 
-Like
-[a sample that is not random](#sample-is-not-random),
-a biased sample results from a lack of care with
-how the sampling is executed. Or, from willfully
-misrepresenting it. A sample might be biased
-because it was conducted on the internet and
-poorer people don't use the internet as frequently
-as the rich. Surveys must be carefully weighted to
-ensure they cover proportional segments of any
-population that could skew the results. It's
-almost impossible to do this perfectly so it is
-often done wrong.
+เหมือน [a sample that is not random](#sample-is-not-random) 
+กลุ่มตัวอย่างที่ไม่เป็นกลางส่วนใหญ่มาจากการที่ไม่ระมัดระวังในการเลือกกลุ่มตัวอย่าง ซึ่งบางทีกลุ่มตัวอย่างที่ไม่เป็นกลางอาจจะเพราะเป็นการสุ่มตัวอย่างผ่านอินเตอร์เน็ต (คนบางกลุ่มอาจจะไม่ได้ใช้อินเตอร์เน็ตบ่อย) ดังนั้นการสำรวจข้อมูลจะต้องทำอย่างระมัดระวังเพื่อให้มั่นใจว่ากระจายไปหาคนทุกกลุ่มได้
 
 เนื้อหาที่เกี่ยวข้อง:
 
@@ -864,17 +815,9 @@ inexcusable.
 
 ## ปัญหาที่คุณควรให้ผู้เชี่ยวชาญช่วย
 
-### Author is untrustworthy
+### แหล่งข้อมูลที่ไม่น่าไว้วางใจ
 
-Sometimes the only data you have are from a source
-you would rather not rely on. In some situations
-that's just fine. The only people who know how
-many guns are made are gun manufacturers. However,
-if you have data from a questionable maker always
-check it with another expert. Better yet, check it
-with two or three. Don't publish data from a
-biased source unless you have substantial
-corroborating evidence.
+บางครั้งข้อมูลเพียงหนึ่งเดียวที่คุณมี มาจากแหล่งข้อมูลที่ไว้ใจไม่ได้ ในบางสถานการณ์มันโอเคที่จะใช้ข้อมูลจากแหล่งข้อมูลที่ไว้ใจไม่ได้ เช่นการจะหาข้อมูลเกี่ยวกับปืนที่ผลิดออกมา จำเป็นจะต้องเก็บข้อมูลจากโรงงานผลิตปืน แต่ถ้าเกิดคุณได้ข้อมูลมาจากคนที่อาจจะมีส่วนได้ส่วนเสียเกี่ยวกับเรื่องนั้น ให้ตรวจสอบกับผู้เชี่ยวชาญอีกที ไม่งั้นคุณอาจจะได้ชุดข้อมูลที่มีความเอนเอียนจากอคติ
 
 ### Collection process is opaque
 
